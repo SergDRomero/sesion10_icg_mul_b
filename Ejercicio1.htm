@@ -1,0 +1,23 @@
+<canvas id='tablero' width=600 height=450></canvas>
+<script>
+	function polygon(a, colorBorde, colorRelleno) { 
+  		ctx.lineWidth = 0;	
+  		ctx.beginPath()
+  		ctx.strokeStyle = colorBorde
+  		ctx.fillStyle = colorRelleno
+  		ctx.moveTo(a[0],a[1])
+  		for (i=2; i < a.length; i+=2)
+   		 ctx.lineTo(a[i],a[i+1]);
+  		ctx.closePath()
+  		ctx.stroke()
+ 		ctx.fill()
+	}
+	var c = document.getElementById('tablero')
+	var ctx = c.getContext('2d')
+
+	polygon([12,14,67,78,145, 344,344], 'rgb(12,34,56)', 'rgb(12,34,56)');
+        polygon([12,14,67,78,145, 14,74], 'rgba(12,34,56,1)', 'rgba(12,34,56, 0.5)'); //0.5 esta  la mitad de su opacidad total
+        polygon([12,14,67,78,145, 50,500], 'rgb(100%,50%,0%)', 'rgb(100%,50%,0%)');//RGB 255,128,0
+        polygon([12,14,67,78,145, 100,100], '#00ffff', '#00ffff'); //RGB 0,255,255
+
+</script>
